@@ -1,0 +1,153 @@
+:root {
+  --bg: #090f1f;
+  --panel: #111a2e;
+  --card: #1b2742;
+  --accent: #38bdf8;
+  --text: #e6edf9;
+  --muted: #9db0d1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #060b17 0%, #0d1730 50%, #091225 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 2rem 1.25rem;
+  text-align: center;
+  border-bottom: 1px solid #264368;
+  background: rgba(10, 18, 36, 0.9);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  z-index: 30;
+}
+
+.hero.small {
+  position: static;
+}
+
+nav {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+nav a {
+  color: var(--text);
+  border: 1px solid #325f8f;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+nav a.active,
+nav a:hover {
+  background: var(--accent);
+  color: #052033;
+}
+
+.container {
+  width: min(1150px, 92vw);
+  margin: 1.2rem auto 2.5rem;
+}
+
+.container.narrow {
+  width: min(720px, 92vw);
+}
+
+.summary,
+.filters,
+.panel {
+  background: rgba(14, 24, 44, 0.95);
+  border: 1px solid #314d78;
+  border-radius: 16px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+select,
+input,
+button {
+  border-radius: 10px;
+  border: 1px solid #406292;
+  background: #091120;
+  color: var(--text);
+  padding: 0.55rem 0.75rem;
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.car-card {
+  background: var(--card);
+  border: 1px solid #43628f;
+  border-radius: 18px;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow: 0 12px 25px rgba(2, 10, 20, 0.35);
+}
+
+.car-card h3 {
+  margin: 0;
+  color: #7dd3fc;
+}
+
+.car-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.price {
+  font-weight: 700;
+  color: #f8f4a6;
+}
+
+.primary-btn,
+.card-btn {
+  cursor: pointer;
+  margin-top: 0.5rem;
+  border: none;
+  background: linear-gradient(90deg, #38bdf8, #22d3ee);
+  color: #052234;
+  font-weight: 700;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+}
+
+.checkout-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.checkout-form label {
+  display: grid;
+  gap: 0.35rem;
+}

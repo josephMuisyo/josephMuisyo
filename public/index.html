@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elite Car Yard | Inventory</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Elite Car Yard</h1>
+      <p>
+        Explore 180+ cars from Toyota, Mercedes, Bmw, Honda and Mitsubishi. Compare color, model,
+        year, mileage and pricing at a glance.
+      </p>
+      <nav>
+        <a class="active" href="/">Inventory</a>
+        <a href="/selection">Selection</a>
+        <a href="/checkout">Checkout</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="summary" id="summary"></section>
+      <section class="filters">
+        <label for="brandFilter">Filter by brand:</label>
+        <select id="brandFilter">
+          <option value="all">All brands</option>
+        </select>
+      </section>
+
+      <section id="carGrid" class="car-grid"></section>
+    </main>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>

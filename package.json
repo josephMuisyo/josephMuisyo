@@ -1,0 +1,10 @@
+{
+  "name": "car-yard-app",
+  "version": "1.0.0",
+  "description": "Three-page car yard web app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --check server.js && node --check public/js/app.js && node --check public/js/selection.js && node --check public/js/checkout.js"
+  }
+}
