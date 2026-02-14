@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer-Home Owner Match</title>
+    <link rel="stylesheet" href="{% static 'listings/styles.css' %}">
+</head>
+<body>
+    <header class="hero">
+        <h1>HomeMatch Realty</h1>
+        <p>Connect with trusted developers, compare homes side-by-side, and complete secure payments.</p>
+    </header>
+
+    <main>
+        <section class="developers">
+            <h2>Featured Real Estate Developers</h2>
+            <div class="developer-grid">
+                {% for developer in developers %}
+                <article class="developer-card">
+                    <h3>{{ developer.name }}</h3>
+                    <p><strong>Company:</strong> {{ developer.company }}</p>
+                    <p><strong>Email:</strong> <a href="mailto:{{ developer.email }}">{{ developer.email }}</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:{{ developer.phone }}">{{ developer.phone }}</a></p>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section>
+            <h2>Available Homes</h2>
+            <div class="property-grid" id="property-grid">
+                {% for property in properties %}
+                <article class="property-card" data-id="{{ property.id }}">
+                    <img src="{{ property.image_url }}" alt="{{ property.title }}" />
+                    <div class="property-content">
+                        <h3>{{ property.title }}</h3>
+                        <p>{{ property.description }}</p>
+                        <ul>
+                            <li><strong>Location:</strong> {{ property.location }}</li>
+                            <li><strong>Price:</strong> KES {{ property.price }}</li>
+                            <li><strong>Bedrooms:</strong> {{ property.bedrooms }}</li>
+                            <li><strong>Bathrooms:</strong> {{ property.bathrooms }}</li>
+                            <li><strong>Area:</strong> {{ property.area_sqft }} sqft</li>
+                            <li><strong>Developer Contact:</strong> {{ property.developer.phone }}</li>
+                        </ul>
+                        <div class="actions">
+                            <label><input type="checkbox" class="compare-box"> Compare</label>
+                            <label><input type="checkbox" class="buy-box"> Select to Buy</label>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="comparison-section">
+            <h2>Side-by-Side Comparison (Minimum 2 homes)</h2>
+            <div id="comparison-table" class="comparison-table"></div>
+        </section>
+
+        <section class="map-section">
+            <h2>Homes Near Your Preferred Location</h2>
+            <label for="location-input">Enter location:</label>
+            <input id="location-input" type="text" value="Nairobi" />
+            <button id="map-btn">Update Map</button>
+            <div id="react-map-root"></div>
+        </section>
+
+        <section class="payment-section">
+            <h2>Payment Options</h2>
+            <p>Selected homes: <span id="selected-count">0</span></p>
+            <form id="payment-form">
+                {% for method in payment_methods %}
+                <label class="payment-option">
+                    <input type="radio" name="payment_method" value="{{ method }}" required>
+                    {{ method }}
+                </label>
+                {% endfor %}
+                <button type="submit">Proceed to Payment</button>
+            </form>
+            <p id="payment-message"></p>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script>
+        window.PROPERTY_DATA = [
+            {% for property in properties %}
+            {
+                id: {{ property.id }},
+                title: "{{ property.title|escapejs }}",
+                location: "{{ property.location|escapejs }}",
+                price: "{{ property.price }}",
+                bedrooms: {{ property.bedrooms }},
+                bathrooms: {{ property.bathrooms }},
+                area: {{ property.area_sqft }}
+            }{% if not forloop.last %},{% endif %}
+            {% endfor %}
+        ];
+    </script>
+    <script src="{% static 'listings/app.js' %}" type="text/babel"></script>
+</body>
+</html>
