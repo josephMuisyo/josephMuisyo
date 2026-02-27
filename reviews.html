@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Reviews | Annie's Beauty Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="sub-hero">
+      <nav class="top-nav">
+        <div class="brand">Annie's Beauty Hub</div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <ul id="nav-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#booking">Book Now</a></li>
+          <li><a href="reviews.html" class="active-link">Reviews</a></li>
+        </ul>
+      </nav>
+      <div class="hero-content narrow">
+        <p class="pill">Real Client Experiences</p>
+        <h1>What Our Clients Say</h1>
+        <p>
+          We pride ourselves on quality service, warm hospitality, and lasting beauty results.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="review-grid" id="review-grid"></div>
+      </section>
+
+      <section class="section booking-form-wrapper">
+        <div class="section-heading">
+          <h2>Share Your Experience</h2>
+          <p>Leave a quick review to help others discover Annie's Beauty Hub.</p>
+        </div>
+
+        <form id="review-form" class="booking-form">
+          <label>
+            Name
+            <input type="text" id="reviewer-name" required placeholder="Your name" />
+          </label>
+          <label>
+            Service You Took
+            <input type="text" id="review-service" required placeholder="e.g. Gel nails + facial" />
+          </label>
+          <label>
+            Rating
+            <select id="review-rating" required>
+              <option value="">Select rating</option>
+              <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+              <option value="4">⭐⭐⭐⭐ (4)</option>
+              <option value="3">⭐⭐⭐ (3)</option>
+            </select>
+          </label>
+          <label>
+            Review
+            <textarea id="review-text" rows="4" required placeholder="Tell us about your visit..."></textarea>
+          </label>
+          <button type="submit" class="btn primary">Post Review</button>
+        </form>
+        <p id="review-message" class="booking-message" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Annie's Beauty Hub</p>
+      <p><a href="index.html">Back to Main Website</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
