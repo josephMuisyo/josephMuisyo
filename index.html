@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annie's Beauty Hub | Ongata Rongai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="home">
+      <nav class="top-nav">
+        <div class="brand">Annie's Beauty Hub</div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <ul id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#booking">Book Now</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <p class="pill">Luxury Beauty & Wellness in Ongata Rongai</p>
+        <h1>Glow, Relax, and Shine at Annie's Beauty Hub</h1>
+        <p>
+          Visit us at <strong>Maasai Mall, 2nd Floor, Ongata Rongai</strong> for premium nail artistry,
+          skincare, massage therapy, and hairdressing designed for the modern Kenyan lifestyle.
+        </p>
+        <div class="hero-buttons">
+          <a href="#booking" class="btn primary">Book Appointment</a>
+          <a href="#services" class="btn secondary">View Services</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="services">
+        <div class="section-heading">
+          <h2>Our Services & Market-Friendly Prices (KES)</h2>
+          <p>
+            Prices are benchmarked against common rates in Nairobi and Ongata Rongai salons and spas,
+            giving you excellent value with premium experience.
+          </p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Service filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="nails">Nails</button>
+          <button class="filter-btn" data-filter="spa">Spa & Skin</button>
+          <button class="filter-btn" data-filter="massage">Massage</button>
+          <button class="filter-btn" data-filter="hair">Hairdressing</button>
+          <button class="filter-btn" data-filter="makeup">Makeup</button>
+        </div>
+
+        <div id="service-grid" class="service-grid"></div>
+      </section>
+
+      <section class="section location-section" id="location">
+        <div>
+          <h2>Visit Annie's Beauty Hub</h2>
+          <p>
+            <strong>Location:</strong> Maasai Mall, 2nd Floor, Ongata Rongai, Kajiado County.
+          </p>
+          <p>
+            <strong>Call/WhatsApp:</strong> <a href="tel:+25477879217">+254 778 79217</a>
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:wanjiruann221@gmail.com">wanjiruann221@gmail.com</a>
+          </p>
+          <p>
+            Open daily from 8:00 AM - 8:00 PM. Walk-ins are welcome, but bookings are encouraged.
+          </p>
+        </div>
+        <div class="location-card">
+          <h3>Why clients love us</h3>
+          <ul>
+            <li>Professional, friendly beauty specialists</li>
+            <li>Clean and relaxing environment</li>
+            <li>Wide selection of beauty treatments</li>
+            <li>Affordable packages for regular self-care</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="section-heading">
+          <h2>Spa Inspiration Gallery</h2>
+          <p>Fresh beauty vibes from Unsplash to inspire your next look and treatment.</p>
+        </div>
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80" alt="Nail treatment setup" />
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80" alt="Hair styling in salon" />
+          <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?auto=format&fit=crop&w=900&q=80" alt="Woman receiving facial treatment" />
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80" alt="Massage therapy" />
+        </div>
+      </section>
+
+      <section class="section" id="booking">
+        <div class="section-heading">
+          <h2>Book Your Appointment</h2>
+          <p>Choose your service and preferred date. We'll contact you to confirm your booking.</p>
+        </div>
+
+        <form id="booking-form" class="booking-form">
+          <label>
+            Full Name
+            <input type="text" id="name" placeholder="Your full name" required />
+          </label>
+          <label>
+            Phone Number
+            <input type="tel" id="phone" placeholder="e.g. 07XXXXXXXX" required />
+          </label>
+          <label>
+            Email
+            <input type="email" id="email" placeholder="you@example.com" />
+          </label>
+          <label>
+            Service
+            <select id="selected-service" required>
+              <option value="">Choose a service</option>
+            </select>
+          </label>
+          <label>
+            Preferred Date
+            <input type="date" id="date" required />
+          </label>
+          <label>
+            Additional Notes
+            <textarea id="notes" rows="3" placeholder="Any special request?"></textarea>
+          </label>
+
+          <button type="submit" class="btn primary">Submit Booking</button>
+        </form>
+        <p id="booking-message" class="booking-message" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Annie's Beauty Hub • Maasai Mall 2nd Floor, Ongata Rongai</p>
+      <p>Call: <a href="tel:+25477879217">+25477879217</a> • Email: <a href="mailto:wanjiruann221@gmail.com">wanjiruann221@gmail.com</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
