@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing | Ray Properties Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="sub-hero">
+      <nav class="top-nav">
+        <a href="index.html" class="brand">Ray Properties Management</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <ul id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="pricing.html" class="active-link">Pricing</a></li>
+          <li><a href="reviews.html">Client Reviews</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </nav>
+      <div class="hero-content narrow">
+        <p class="pill">Management Fee Estimator</p>
+        <h1>Calculate Your Estimated Management Charges</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="section estimator-section">
+        <form id="pricing-form" class="form-grid">
+          <label>
+            Size of Property
+            <select id="property-size" required>
+              <option value="">Select size</option>
+              <option value="small">Small (single shop / simple unit)</option>
+              <option value="medium">Medium (apartment block / mixed units)</option>
+              <option value="large">Large (business park / farm estate)</option>
+            </select>
+          </label>
+          <label>
+            Property Location
+            <select id="property-location" required>
+              <option value="">Select location class</option>
+              <option value="major">Major town CBD / prime zone</option>
+              <option value="urban">Urban neighborhood</option>
+              <option value="regional">Regional / peri-urban zone</option>
+            </select>
+          </label>
+          <label>
+            Property Worth Estimate (KES)
+            <input type="number" id="property-worth" min="100000" step="50000" required placeholder="e.g. 10000000" />
+          </label>
+          <label>
+            Intended Time of Management
+            <select id="management-term" required>
+              <option value="">Select duration</option>
+              <option value="short">0 - 12 months</option>
+              <option value="mid">1 - 3 years</option>
+              <option value="long">3+ years</option>
+            </select>
+          </label>
+          <button type="submit" class="btn primary">Estimate Fee</button>
+        </form>
+
+        <div class="estimate-result" id="estimate-result" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Ray Properties Management</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

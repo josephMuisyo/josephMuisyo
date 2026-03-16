@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Managed Properties | Ray Properties Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="sub-hero">
+      <nav class="top-nav">
+        <a href="index.html" class="brand">Ray Properties Management</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <ul id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="properties.html" class="active-link">Properties</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="reviews.html">Client Reviews</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </nav>
+      <div class="hero-content narrow">
+        <p class="pill">Our Portfolio</p>
+        <h1>Currently Managed & Previously Managed Properties</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-heading">
+          <h2>Currently Managed Properties</h2>
+        </div>
+        <div class="property-grid">
+          <article class="card property-card">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Commercial business park in Nairobi" />
+            <h3>Westlands Business Park, Nairobi</h3>
+            <p>Commercial office complex with retail units and parking management.</p>
+          </article>
+          <article class="card property-card">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80" alt="Residential apartment block" />
+            <h3>Milimani Heights Apartments, Kisumu</h3>
+            <p>Multi-unit residential apartment block with tenant lifecycle management.</p>
+          </article>
+          <article class="card property-card">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Farm field with crops" />
+            <h3>Green Plains Farm Estate, Eldoret</h3>
+            <p>Agricultural lease management for mixed-use farm fields and storage spaces.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2>Previously Managed Properties</h2>
+        </div>
+        <div class="property-grid">
+          <article class="card property-card">
+            <img src="https://images.unsplash.com/photo-1555636222-cae831e670b3?auto=format&fit=crop&w=900&q=80" alt="Single shop storefront" />
+            <h3>Makupa Retail Arcade, Mombasa</h3>
+            <p>Single shop units and small-scale retail tenancies.</p>
+          </article>
+          <article class="card property-card">
+            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=900&q=80" alt="Simple residential house" />
+            <h3>Nakuru Garden Units, Nakuru</h3>
+            <p>Simple residential units for long-term family occupancy.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Ray Properties Management</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
